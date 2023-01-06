@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Services.Contracts
 {
-    internal interface IEmployeeServicecs
+    public interface IEmployeeService
     {
     }
 }
