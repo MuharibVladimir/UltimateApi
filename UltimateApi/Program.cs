@@ -1,3 +1,4 @@
+using LoggerService;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
 using UltimateApi.Extensions;
@@ -32,10 +33,11 @@ var app = builder.Build();
 //    app.UseSwaggerUI();
 //}
 
-if (app.Environment.IsDevelopment())
-    app.UseDeveloperExceptionPage();
-else
+var logger = app.Services.GetRequiredService<ILoggerManager>();
+app.ConfigureExceptionHandler(logger);
+if (app.Environment.IsProduction())
     app.UseHsts();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
