@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Contracts", "Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{081CC032-6707-4F7C-9FD3-FE23BB244BFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateApi.Presentation", "UlitmateAPI.Presentation\UltimateApi.Presentation.csproj", "{8AA18E53-FB1E-458A-87A8-3F7DC80D29C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateApi.Presentation", "UlitmateAPI.Presentation\UltimateApi.Presentation.csproj", "{8AA18E53-FB1E-458A-87A8-3F7DC80D29C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{E30008F5-76BA-451C-A815-FE6372026568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{E30008F5-76BA-451C-A815-FE6372026568}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
