@@ -28,8 +28,14 @@ namespace Services
             _mapper = mapper;
         }
 
-        public async Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters, bool trackChanges)
+        public async Task<(IEnumerable<EmployeeDto> employees, MetaData metaData)> GetEmployeesAsync(Guid companyId, EmployeeParameters employeeParameters,
+        bool trackChanges)
         {
+            if (!employeeParameters.ValidAgeRange)
+            {
+                throw new MaxAgeRangeBadRequestException();
+            }
+
             await CheckIfCompanyExistsAsync(companyId, trackChanges);
 
             var employeesWithMetaData =  await _repository.Employee.GetEmployeesAsync(companyId, employeeParameters, trackChanges);
