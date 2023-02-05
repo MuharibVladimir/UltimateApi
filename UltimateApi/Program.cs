@@ -1,9 +1,12 @@
+using Contracts;
 using LoggerService;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Options;
 using NLog;
+using Services.DataShaping;
+using Shared.DataTransferObjects;
 using UltimateApi.Extensions;
 using UltimateApi.Presentation.ActionFilters;
 
@@ -20,6 +23,7 @@ builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddScoped<IDataShaper<EmployeeDto>, DataShaper<EmployeeDto>>();
 
 builder.Services.AddScoped<ValidationFilterAttribute>();
 
