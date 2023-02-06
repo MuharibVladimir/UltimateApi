@@ -52,6 +52,7 @@ builder.Services.AddControllers(config =>
 builder.Services.AddCustomMediaTypes();
 builder.Services.AddScoped<ValidateMediaTypeAttribute>();
 builder.Services.AddScoped<IEmployeeLinks, EmployeeLinks>();
+builder.Services.ConfigureVersioning();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
