@@ -9,6 +9,7 @@ using Services.DataShaping;
 using Shared.DataTransferObjects;
 using UltimateApi.Extensions;
 using UltimateApi.Presentation.ActionFilters;
+using UltimateApi.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +48,10 @@ builder.Services.AddControllers(config =>
 }).AddXmlDataContractSerializerFormatters()
   .AddCustomCSVFormatter()
   .AddApplicationPart(typeof(UltimateApi.Presentation.AssemblyReference).Assembly);
+
+builder.Services.AddCustomMediaTypes();
+builder.Services.AddScoped<ValidateMediaTypeAttribute>();
+builder.Services.AddScoped<IEmployeeLinks, EmployeeLinks>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
