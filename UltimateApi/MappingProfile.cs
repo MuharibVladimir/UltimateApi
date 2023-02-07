@@ -22,7 +22,7 @@ namespace UltimateApi
 
             CreateMap<CompanyForUpdateDto, Company>();
 
+            CreateMap<UserForRegistrationDto, User>();
         }
-
     }
 }
