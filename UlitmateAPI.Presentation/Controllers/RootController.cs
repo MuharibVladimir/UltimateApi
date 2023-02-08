@@ -31,9 +31,9 @@ namespace UltimateApi.Presentation.Controllers
                 },
                 new Link
                 {
-                Href = _linkGenerator.GetUriByName(HttpContext, "GetCompanies", new {}),
-                Rel = "companies",
-                Method = "GET"
+                    Href = _linkGenerator.GetUriByName(HttpContext, "GetCompanies", new {}),
+                    Rel = "companies",
+                    Method = "GET"
                 },
                 new Link
                 {
